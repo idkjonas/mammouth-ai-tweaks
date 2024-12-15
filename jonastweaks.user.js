@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Jonas' Mammouth tweaks
 // @namespace    http://jonas.tf/
-// @version      1.0
+// @version      1.0.1
 // @description  Tweaks for mammouth.ai
-// @author       You
+// @author       Jonas
 // @match        https://mammouth.ai/app/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=jonas.tf
 // @grant        none
@@ -15,14 +15,17 @@
     // fix text window width
 
     const customCss = `
+@media (min-width: 700px) {
     div.grow.overflow-auto.scrollable.flex.flex-col.gap-4 {
         width: 700px;
         margin-inline: auto;
     }
+
     div.w-full.relative:has(div.relative.outline-1) {
         width: 700px;
         margin-inline: auto;
     }
+}
 `;
 
     function injectCSS() {
