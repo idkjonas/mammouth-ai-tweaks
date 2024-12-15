@@ -1,6 +1,6 @@
 # Jonas' Mammouth.ai tweaks
 
-A userscript that fixes and adds a useful features and improves the QOL
+A userscript for mammouth.ai that fixes and adds a useful features and improves the QOL
 
 ## Current features
 
