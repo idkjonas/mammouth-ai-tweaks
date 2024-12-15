@@ -66,7 +66,7 @@
         messageElement.appendChild(button);
     }
 
-    const selector = ".message_1df2:is(.anthropic, .groq, .openai, .mistal, .google, .xai)"
+    const selector = ".message_1df2:is(.anthropic, .groq, .openai, .mistral, .google, .xai)"
 
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
