@@ -1,11 +1,7 @@
 // ==UserScript==
 // @name         Jonas' Mammouth tweaks
 // @namespace    http://jonas.tf/
-<<<<<<< HEAD
 // @version      1.1
-=======
-// @version      1.0.1
->>>>>>> cd77b8251d4361768b24f9dae4c8870905c2830b
 // @description  Tweaks for mammouth.ai
 // @author       Jonas
 // @match        https://mammouth.ai/app/*
@@ -62,26 +58,11 @@
     // fix text window width
 
     const customCss = `
-<<<<<<< HEAD
         @media (min-width: 700px) {
             div.grow.overflow-auto.scrollable.flex.flex-col.gap-4 {
                 width: 700px;
                 margin-inline: auto;
             }
-=======
-@media (min-width: 700px) {
-    div.grow.overflow-auto.scrollable.flex.flex-col.gap-4 {
-        width: 700px;
-        margin-inline: auto;
-    }
-
-    div.w-full.relative:has(div.relative.outline-1) {
-        width: 700px;
-        margin-inline: auto;
-    }
-}
-`;
->>>>>>> cd77b8251d4361768b24f9dae4c8870905c2830b
 
             div.w-full.relative:has(div.relative.outline-1) {
                 width: 700px;
