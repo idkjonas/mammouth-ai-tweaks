@@ -1,7 +1,11 @@
 // ==UserScript==
 // @name         Jonas' Mammouth tweaks
 // @namespace    http://jonas.tf/
+<<<<<<< HEAD
+// @version      1.1
+=======
 // @version      1.0.1
+>>>>>>> cd77b8251d4361768b24f9dae4c8870905c2830b
 // @description  Tweaks for mammouth.ai
 // @author       Jonas
 // @match        https://mammouth.ai/app/*
@@ -12,9 +16,59 @@
 (function() {
     "use strict";
 
+    const qParam = new URL(window.location).searchParams.get("q");
+
+    window.addEventListener("load", (event) => {
+        injectCSS();
+
+        // add query parameter functionality
+
+        if (qParam) {
+            let foundElement = false;
+
+            let el = document.querySelector("textarea");
+
+            checkForTextarea();
+
+            function checkForTextarea() {
+                el = document.querySelector('textarea[placeholder="Ask anything .."]');
+                if (el == null) {
+                    setTimeout(() => {
+                        checkForTextarea()
+                    }, 10)
+                } else {
+                    el.focus();
+                    el.value = qParam;
+                    el.dispatchEvent(new Event('input', { bubbles: true }));
+
+                    const btn = document.querySelector("span.i-heroicons\\:arrow-right-circle-16-solid").parentNode;
+
+                    if (btn) {
+                        setTimeout(() => {
+                            btn.click();
+                        })
+                    } else {
+                        console.error("Button does not exist")
+                    }
+
+                }
+            }
+
+
+
+        }
+    });
+
     // fix text window width
 
     const customCss = `
+<<<<<<< HEAD
+        @media (min-width: 700px) {
+            div.grow.overflow-auto.scrollable.flex.flex-col.gap-4 {
+                width: 700px;
+                margin-inline: auto;
+            }
+=======
 @media (min-width: 700px) {
     div.grow.overflow-auto.scrollable.flex.flex-col.gap-4 {
         width: 700px;
@@ -27,6 +81,14 @@
     }
 }
 `;
+>>>>>>> cd77b8251d4361768b24f9dae4c8870905c2830b
+
+            div.w-full.relative:has(div.relative.outline-1) {
+                width: 700px;
+                margin-inline: auto;
+            }
+        }
+    `;
 
     function injectCSS() {
         if (!document.querySelector("[jonas-tweaks]")) {
@@ -37,9 +99,7 @@
         }
     }
 
-    document.addEventListener("DOMContentLoaded", injectCSS);
-
-    window.addEventListener("load", injectCSS);
+    // window.addEventListener("load", injectCSS);
 
     injectCSS();
 
