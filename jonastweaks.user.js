@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jonas' Mammouth tweaks
 // @namespace    http://jonas.tf/
-// @version      1.1
+// @version      1.1.5
 // @description  Tweaks for mammouth.ai
 // @author       Jonas
 // @match        https://mammouth.ai/app/*
